@@ -7,10 +7,8 @@ body {
     background-color: hsl(240, 3%, 7%);
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     margin: 0;
-    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
-    overflow-y: hidden;
 }
 
 
@@ -24,6 +22,7 @@ body {
     margin-bottom: 1em;
     grid-template-columns: repeat(3);
     background-color: rgb(35, 35, 35);
+    align-content: flex-start;
 }
 
 .keyboard {
@@ -215,7 +214,6 @@ body {
 
  footer {
     margin-top: 10px;
-    height:[footer-height];
     color: rgba(255, 255, 255, 0.256);
     text-transform: uppercase;
     display: grid;
@@ -223,4 +221,28 @@ body {
     align-content: center;
     background-color: rgb(35, 35, 35);;
     flex-shrink: 0;
+    align-content: flex-end;
+}
+
+.button-next {
+    padding: 1em;
+    margin: 1em;
+    color: white;
+    text-transform: uppercase;  
+    background-color: rgba(101, 227, 101, 0.789);
+    border: none;
+    border-radius: .25em;
+}
+.button-next:active {
+    padding: 1em;
+    margin: 1em;
+    color: white;
+    text-transform: uppercase;  
+    background-color: rgba(72, 233, 72, 0.668);
+    border: none;
+    border-radius: .25em;
+
+}
+.button-next:hover {
+    background-color: rgba(60, 181, 60, 0.789);
 }

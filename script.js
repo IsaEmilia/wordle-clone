@@ -15296,11 +15296,14 @@ const DANCE_ANIMATION_DURATION = 500
 const keyboard = document.querySelector("[data-keyboard]")
 const alertContainer = document.querySelector("[data-alert-container]")
 const guessGrid = document.querySelector("[data-guess-grid]")
-const offsetFromDate = new Date(2022, 0, 1)
-const msOffsest = Date.now() - offsetFromDate
-const dayOffset = msOffsest / 1000 / 60 / 60 / 24
-console.log(dayOffset)
-const targetWord = targetWords[Math.floor(dayOffset)]
+// const offsetFromDate = new Date(2022, 0, 1)
+// const msOffsest = Date.now() - offsetFromDate
+// const dayOffset = msOffsest / 1000 / 60 / 60 / 24
+// console.log(dayOffset)
+// const targetWord = targetWords[Math.floor(dayOffset)]
+const targetWord = targetWords[Math.floor(Math.random() * targetWords.length)]
+console.log(targetWord)
+const buttonNext = document.getElementsByClassName("button-next")
 
 
 
@@ -15309,12 +15312,17 @@ const targetWord = targetWords[Math.floor(dayOffset)]
   function startInteraction() {
     document.addEventListener("click", handleMouseClick)
     document.addEventListener("keydown", handleKeyPress)
-  };
+  }
 
   function stopInteraction() {
     document.removeEventListener("click", handleMouseClick)
     document.removeEventListener("keydown", handleKeyPress)
   }
+
+  function handleButton() {
+    location.reload()
+    startInteraction()
+}
 
   function handleMouseClick(e) {
     if (e.target.matches("[data-key]")) {
@@ -15449,7 +15457,6 @@ const targetWord = targetWords[Math.floor(dayOffset)]
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
     if (remainingTiles.length === 0) {
         showAlert(targetWord.toUpperCase(), null)
-        stopInteraction
     }
   }
 
