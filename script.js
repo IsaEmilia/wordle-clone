@@ -31,10 +31,6 @@ const buttonNext = document.getElementsByClassName("button-next")
     document.removeEventListener("keydown", handleKeyPress)
   }
 
-  function handleButton() {
-    location.reload()
-}
-
   function handleMouseClick(e) {
     if (e.target.matches("[data-key]")) {
         pressKey(e.target.dataset.key)
@@ -61,7 +57,6 @@ const buttonNext = document.getElementsByClassName("button-next")
     } 
     if (e.key.match(/^[a-z]$/)) {
         pressKey(e.key)
-        return
     }
   }
 
